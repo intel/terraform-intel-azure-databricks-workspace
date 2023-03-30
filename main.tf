@@ -14,7 +14,7 @@ data "azurerm_resource_group" "databricks" {
   name = var.resource_group_name
 }
 
-data "azurerm_virtual_network" "dbx-vnet" { 
+data "azurerm_virtual_network" "dbx-vnet" {
   count               = local.use_vnet ? 1 : 0
   name                = var.dbx_vnet
   resource_group_name = data.azurerm_resource_group.databricks.name
@@ -48,10 +48,10 @@ resource "azurerm_databricks_workspace" "az-databricks" {
   custom_parameters {
     no_public_ip                                         = false
     virtual_network_id                                   = local.use_vnet ? data.azurerm_virtual_network.dbx-vnet[0].id : null
-    public_subnet_name                                   = local.use_vnet ? data.azurerm_subnet.dbx-public[0].name: null
-    public_subnet_network_security_group_association_id  = local.use_vnet ? data.azurerm_subnet.dbx-public[0].id: null
-    private_subnet_name                                  = local.use_vnet ? data.azurerm_subnet.dbx-private[0].name: null
-    private_subnet_network_security_group_association_id = local.use_vnet ? data.azurerm_subnet.dbx-public[0].id: null
+    public_subnet_name                                   = local.use_vnet ? data.azurerm_subnet.dbx-public[0].name : null
+    public_subnet_network_security_group_association_id  = local.use_vnet ? data.azurerm_subnet.dbx-public[0].id : null
+    private_subnet_name                                  = local.use_vnet ? data.azurerm_subnet.dbx-private[0].name : null
+    private_subnet_network_security_group_association_id = local.use_vnet ? data.azurerm_subnet.dbx-public[0].id : null
   }
 
   tags = var.tags

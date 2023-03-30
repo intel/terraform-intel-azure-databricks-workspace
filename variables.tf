@@ -21,20 +21,20 @@ variable "dbx_workspace_name" {
 ########################
 variable "dbx_vnet" {
   description = "Name of the virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "dbx_public_subnet" {
   description = "Name of the public subnet in your virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "dbx_private_subnet" {
   description = "Name of the private subnet in your virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "dbx_sku" {
@@ -49,14 +49,14 @@ variable "dbx_sku" {
 
 variable "dbx_no_public_ip" {
   description = "Are public IP Addresses not allowed? Possible values are true or false. Defaults to false."
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "dbx_public_network_access_enabled" {
   description = "Allow public access for accessing workspace. Set value to false to access workspace only via private link endpoint. Possible values include true or false. Defaults to true."
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "dbx_network_security_group_rules_required" {
@@ -72,7 +72,7 @@ variable "dbx_network_security_group_rules_required" {
 variable "tags" {
   description = "Tags to apply to the Databricks Workspace"
   type        = map(string)
-  default     = {    
+  default = {
     name     = "shreejan.mistry@intel.com",
     duration = "4"
     /* "owner"    = "user@example.com"
