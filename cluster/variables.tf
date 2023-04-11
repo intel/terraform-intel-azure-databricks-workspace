@@ -69,7 +69,8 @@ variable "tags" {
   description = "Tags"
   type        = map(string)
   default = {
-    "key" = "value"
+    "owner"    = "user@example.com"
+    "module"   = "Intel-Cloud-Optimization-Module"
   }
 }
 

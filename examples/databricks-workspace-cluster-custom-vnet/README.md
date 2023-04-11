@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/OTCShare2/terraform-intel-hashicorp/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-azure-databricks/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
 # Intel® Cloud Optimization Modules for Terraform
@@ -16,9 +16,9 @@ The module can deploy an Intel Optimized Azure Databricks Workspace and Cluster.
 [Accelerating Databricks Runtime for Machine Learning](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273)
 
 ## Usage
-
+[Steps to create Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal#create-a-virtual-network)
 ```
-NOTE : This example assumes you have virtual network with a public and private subnet in your Azure Subscription
+NOTE : This example assumes you have virtual network with a public and private subnet in your Azure Subscription. 
 ```
 See examples folder for code ./examples/terraform-intel-azure-databricks/main.tf
 
@@ -46,7 +46,6 @@ Run Terraform
 terraform init  
 terraform plan
 terraform apply
-
 ```
 
 Note that this example may create resources. Run `terraform destroy` when you don't need these resources anymore.

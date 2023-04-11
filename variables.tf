@@ -73,9 +73,7 @@ variable "tags" {
   description = "Tags to apply to the Databricks Workspace"
   type        = map(string)
   default = {
-    name     = "shreejan.mistry@intel.com",
-    duration = "4"
-    /* "owner"    = "user@example.com"
-    "module"   = "Intel-Cloud-Optimization-Module" */
+    "owner"    = "user@example.com"
+    "module"   = "Intel-Cloud-Optimization-Module"
   }
 }

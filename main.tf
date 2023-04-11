@@ -72,10 +72,8 @@ module "gis" {
 module "databricks_cluster" {
   source = "./cluster"
   tags = {
-    name     = "shreejan.mistry@intel.com",
-    duration = "4"
-    /* "owner"    = "user@example.com"
-    "module"   = "Intel-Cloud-Optimization-Module" */
+    "owner"    = "user@example.com"
+    "module"   = "Intel-Cloud-Optimization-Module"
   }
   depends_on = [
     azurerm_databricks_workspace.az-databricks,
