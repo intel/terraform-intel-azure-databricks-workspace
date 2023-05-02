@@ -4,7 +4,7 @@ terraform {
     random  = "~> 3.4.3"
     databricks = {
       source  = "databricks/databricks"
-      version = "~> 1.13.0"
+      version = "~> 1.14.2"
     }
   }
 
