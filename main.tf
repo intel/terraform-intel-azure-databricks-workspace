@@ -59,7 +59,7 @@ resource "azurerm_databricks_workspace" "az-databricks" {
 }
 
 ################ Global Init Script ###########################
-resource "databricks_global_init_script" "intel_optimized_script" {
+/* resource "databricks_global_init_script" "intel_optimized_script" {
   name    = "Intel Optimized ML-AI Init Script"
   enabled = true
   content_base64 = base64encode(<<-EOT
@@ -70,5 +70,14 @@ resource "databricks_global_init_script" "intel_optimized_script" {
     EOT
   )
   depends_on = [ azurerm_databricks_workspace.az-databricks ]
+} */
+
+################ Global Init Script ###########################
+
+module "gis" {
+  source = "./global_init_scripts"
+  depends_on = [
+    azurerm_databricks_workspace.az-databricks
+  ]
 }
 
