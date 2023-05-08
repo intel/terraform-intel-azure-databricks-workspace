@@ -7,7 +7,7 @@
 © Copyright 2022, Intel Corporation
 
 ## Azure Databricks
-The module can deploy an Intel Optimized Azure Databricks Workspace and Cluster. Instance Selection and Intel Optimizations have been defaulted in the code.
+The module can deploy an Intel Optimized Azure Databricks Workspace
 
 **Learn more about optimizations :**
 
@@ -18,19 +18,38 @@ The module can deploy an Intel Optimized Azure Databricks Workspace and Cluster.
 ## Usage
 
 
-See examples folder for code ./examples/terraform-intel-azure-databricks/main.tf
+See examples folder for code ./examples/terraform-intel-azure-databricks/main.tf.
 
-Example of main.tf
+This example showcases how to use the [Intel Optimized Databricks Cluster](https://registry.terraform.io/modules/intel/databricks-cluster/intel/latest) with the given Intel Optimized Azure Databricks Workspace Module.
 
-```hcl
-# Provision Intel Cloud Optimization Module
+* **Prerequisites:**
 
-module "module-example" {
-  source                  = "intel/azure-databricks/intel"
-  resource_group_name     = <"ENTER_YOUR_RESOURCE_GROUP_NAME">                #Required. Enter an pre-existing resource group you want Azure Databricks Workspace to deploy in
-  dbx_workspace_name      = <"NAME_YOUR_DATABRICKS_WORKSPACE">                #Required. Enter a name for your Azure Databricks Workspace
-}
-```
+  1.  Configure the **providers.tf** like shown in this example. It is important to configure both providers as Databricks Workspace and Cluster use seperate providers to deploy resources. Also see how to use the **databricks.cluster** provider for the Databricks Cluster module in example/main.tf
+
+  2.  See the main.tf in the example on how to pass the value for dbx_host (i.e. the URL of the databricks workspace) in the Databricks Cluster Module 
+
+  3.  Example of main.tf
+
+        ```hcl
+        # Provision Intel Cloud Optimization Module for Azure Databricks
+
+        module "module-example" {
+            source                  = "intel/azure-databricks/intel"
+            resource_group_name     = <"ENTER_YOUR_RESOURCE_GROUP_NAME">                #Required. 
+            dbx_workspace_name      = <"NAME_YOUR_DATABRICKS_WORKSPACE">                #Required. 
+        }
+
+        # This example creates databricks cluster on your azure dbx workspace created above.
+
+        module "databricks_cluster" {
+            source     = "../../"
+            dbx_host   = module.module-example.dbx_workspace_url       #Required
+            dbx_cloud  = "azure"                                       #Required
+
+            depends_on = [ module.module-example ]
+            providers  = { databricks = databricks.cluster }
+        }
+        ```
 
 Run Terraform
 
@@ -38,7 +57,6 @@ Run Terraform
 terraform init  
 terraform plan
 terraform apply
-
 ```
 
 Note that this example may create resources. Run `terraform destroy` when you don't need these resources anymore.

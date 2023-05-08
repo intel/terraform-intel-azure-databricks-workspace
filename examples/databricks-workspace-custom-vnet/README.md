@@ -7,9 +7,7 @@
 © Copyright 2022, Intel Corporation
 
 ## Azure Databricks
-The module can deploy an Intel Optimized Azure Databricks Workspace and Cluster. Instance Selection and Intel Optimizations have been defaulted in the code.
-
-**Learn more about optimizations :**
+The module can deploy an Intel Optimized Azure Databricks Workspace
 
 [Databricks Photon using Azure Edsv5](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
 
