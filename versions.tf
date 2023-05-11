@@ -4,17 +4,8 @@ terraform {
     random  = "~> 3.4.3"
     databricks = {
       source  = "databricks/databricks"
-      version = "~> 1.13.0"
+      version = "~> 1.14.2"
     }
   }
 
-}
-
-# Specifying the provider for Azure resources
-provider "azurerm" {
-  features {}
-}
-
-provider "databricks" {
-  host = azurerm_databricks_workspace.az-databricks.workspace_url
 }

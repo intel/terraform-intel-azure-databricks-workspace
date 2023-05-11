@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/intel/terraform-intel-azure-databricks/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-azure-databricks-workspace/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
 # Intel® Cloud Optimization Modules for Terraform
@@ -7,7 +7,7 @@
 © Copyright 2022, Intel Corporation
 
 ## Azure Databricks
-The module can deploy an Intel Optimized Azure Databricks Workspace and Cluster. Instance Selection and Intel Optimizations have been defaulted in the code.
+The module can deploy an Intel Optimized Azure Databricks Workspace.
 
 **Learn more about optimizations :**
 
@@ -26,7 +26,7 @@ Example of main.tf
 # Provision Intel Cloud Optimization Module
 
 module "module-example" {
-  source                  = "intel/azure-databricks/intel"
+  source                  = "intel/azure-databricks-workspace/intel"
   resource_group_name     = <"ENTER_YOUR_RESOURCE_GROUP_NAME">                #Required. Enter an pre-existing resource group you want Azure Databricks Workspace to deploy in
   dbx_workspace_name      = <"NAME_YOUR_DATABRICKS_WORKSPACE">                #Required. Enter a name for your Azure Databricks Workspace
 
@@ -56,7 +56,7 @@ More Information regarding deploying and [Managing Databricks](https://registry.
 | Name | Version |
 |------|---------|
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.48 |
-| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | ~> 1.13.0 |
+| <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | ~> 1.14.2 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.4.3 |
 
 ## Providers
@@ -64,20 +64,19 @@ More Information regarding deploying and [Managing Databricks](https://registry.
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.48 |
+| <a name="provider_databricks"></a> [databricks](#provider\_databricks) | ~> 1.14.2 |
 | <a name="provider_random"></a> [random](#provider\_random) | ~> 3.4.3 |
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_databricks_cluster"></a> [databricks\_cluster](#module\_databricks\_cluster) | ./cluster | n/a |
-| <a name="module_gis"></a> [gis](#module\_gis) | ./global_init_scripts | n/a |
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [azurerm_databricks_workspace.az-databricks](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/databricks_workspace) | resource |
+| [databricks_global_init_script.intel_optimized_script](https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/global_init_script) | resource |
 | [random_string.naming](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [azurerm_resource_group.databricks](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 | [azurerm_subnet.dbx-private](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
@@ -103,14 +102,6 @@ More Information regarding deploying and [Managing Databricks](https://registry.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dbx_cluster_autoterminate_min"></a> [dbx\_cluster\_autoterminate\_min](#output\_dbx\_cluster\_autoterminate\_min) | Autoterminate minute of the databricks cluster |
-| <a name="output_dbx_cluster_custom_tags"></a> [dbx\_cluster\_custom\_tags](#output\_dbx\_cluster\_custom\_tags) | Custom Tags |
-| <a name="output_dbx_cluster_name"></a> [dbx\_cluster\_name](#output\_dbx\_cluster\_name) | Name of the databricks cluster |
-| <a name="output_dbx_cluster_node_type_id"></a> [dbx\_cluster\_node\_type\_id](#output\_dbx\_cluster\_node\_type\_id) | Instance type of the databricks cluster |
-| <a name="output_dbx_cluster_num_workers"></a> [dbx\_cluster\_num\_workers](#output\_dbx\_cluster\_num\_workers) | Num of workers nodes of the databricks cluster |
-| <a name="output_dbx_cluster_runtime_engine"></a> [dbx\_cluster\_runtime\_engine](#output\_dbx\_cluster\_runtime\_engine) | Runtime Engine of the databricks cluster |
-| <a name="output_dbx_cluster_spark_conf"></a> [dbx\_cluster\_spark\_conf](#output\_dbx\_cluster\_spark\_conf) | Spark Configurations of the databricks cluster |
-| <a name="output_dbx_cluster_spark_version"></a> [dbx\_cluster\_spark\_version](#output\_dbx\_cluster\_spark\_version) | Spark version of the databricks cluster |
 | <a name="output_dbx_custom_parameters"></a> [dbx\_custom\_parameters](#output\_dbx\_custom\_parameters) | Custom parameter block of the databricks workspace |
 | <a name="output_dbx_location"></a> [dbx\_location](#output\_dbx\_location) | Location of the databricks workspace |
 | <a name="output_dbx_network_security_group_rules_required"></a> [dbx\_network\_security\_group\_rules\_required](#output\_dbx\_network\_security\_group\_rules\_required) | NSG outbound rules of the databricks workspace |

@@ -59,26 +59,18 @@ resource "azurerm_databricks_workspace" "az-databricks" {
 }
 
 ################ Global Init Script ###########################
-
-module "gis" {
-  source = "./global_init_scripts"
-  depends_on = [
-    azurerm_databricks_workspace.az-databricks
-  ]
+resource "databricks_global_init_script" "intel_optimized_script" {
+  name    = "Intel Optimized ML-AI Init Script"
+  enabled = true
+  content_base64 = base64encode(<<-EOT
+    #!/bin/bash
+    pip install --upgrade pip
+    pip install intel-tensorflow==2.11.0
+    pip install scikit-learn-intelex
+    EOT
+  )
+  depends_on = [ azurerm_databricks_workspace.az-databricks ]
 }
 
-################ Datbricks Cluster ###########################
-
-module "databricks_cluster" {
-  source = "./cluster"
-  tags = {
-    "owner"    = "user@example.com"
-    "module"   = "Intel-Cloud-Optimization-Module"
-  }
-  depends_on = [
-    azurerm_databricks_workspace.az-databricks,
-    module.gis
-  ]
-}
 
 

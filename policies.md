@@ -10,42 +10,28 @@
 
 This file documents the HashiCorp Sentinel policies that apply to this module
 
-## Policy 1
+## Policy 1  
 
-Description: Intel Xeon 3rd Generation Scalable processors (code-named Ice Lake) should be used
+Description: Intel Optimized ML Init Scripts
 
-Resource type: databricks_cluster
+Resource type: databricks_global_init_script
 
-Parameter: node_type_id
+Parameter: content_base64
 
-Allowed Types
-
-- **Memory Optimized:** Standard_E4ds_v5, Standard_E8ds_v5, Standard_E16ds_v5, Standard_E20ds_v5, Standard_E32ds_v5, Standard_E48ds_v5, Standard_E64ds_v5, Standard_E96ds_v5
-
-## Policy 2  
-
-Description: Provisioned PHOTON runtime engine should be used for enhanced performance
-
-Resource type: databricks_cluster
-
-Parameter: runtime_engine
-
-Allowed Type: PHOTON
-
-## Policy 3  
-
-Description: databricks_cluster
-
-Resource type: databricks_cluster
-
-Parameter: spark_conf
-
-Allowed Type: map(string) #(Cannot be null)
-
+Allowed Type: 
+```
+ base64encode(<<-EOT
+    #!/bin/bash
+    pip install --upgrade pip
+    pip install intel-tensorflow==2.11.0
+    pip install scikit-learn-intelex
+    EOT
+  )   
+```
 ## Links
+
+<https://www.databricks.com/product/pricing>
 
 <https://learn.microsoft.com/en-us/azure/virtual-machines/edv5-edsv5-series>
 
 <https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html>
-
-<https://www.databricks.com/product/pricing>
