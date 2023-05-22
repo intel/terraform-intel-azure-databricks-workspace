@@ -10,10 +10,40 @@
 The module can deploy an Intel Optimized Azure Databricks Workspace.
 
 **Learn more about optimizations :**
+## Performance Data
 
-[Databricks Photon using Azure Edsv5](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+<center>
 
-[Accelerating Databricks Runtime for Machine Learning](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273)
+#### [Reduce Time to Decision With the Databricks Lakehouse Platform and Latest Intel 3rd Gen Xeon Scalable Processors](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-databricks-cluster/blob/main/images/azure-dbx-1.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+#### [Up to 3.0x price/performance benefits and 6.7x the speed up on Azure Edsv5](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-databricks-cluster/blob/main/images/azure-dbx-2.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+#### [Accelerating Azure Databricks Runtime for Machine Learning](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273)
+
+<p align="center">
+  <a href="https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273">
+  <img src="https://github.com/intel/terraform-intel-databricks-cluster/blob/main/images/dbx-runtime.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+</center>
+
 
 ## Usage
 
