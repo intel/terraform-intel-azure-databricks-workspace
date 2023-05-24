@@ -1,6 +1,9 @@
 locals {
   #Determines wheter to use custom user-provided virtual network or databricks-managed network
   use_vnet = var.dbx_vnet == "" ? false : true
+
+  #If the enable_intel_tags is true, then additional Intel tags will be added to the resources created
+  tags = var.enable_intel_tags ? merge(var.intel_tags, var.tags) : var.tags
 }
 
 resource "random_string" "naming" {
@@ -54,7 +57,7 @@ resource "azurerm_databricks_workspace" "az-databricks" {
     private_subnet_network_security_group_association_id = local.use_vnet ? data.azurerm_subnet.dbx-public[0].id : null
   }
 
-  tags = var.tags
+  tags = local.tags
 
 }
 

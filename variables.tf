@@ -72,8 +72,20 @@ variable "dbx_network_security_group_rules_required" {
 variable "tags" {
   description = "Tags to apply to the Databricks Workspace"
   type        = map(string)
-  default = {
-    "owner"    = "user@example.com"
-    "module"   = "Intel-Cloud-Optimization-Module"
+  default     = {}
+}
+
+variable "enable_intel_tags" {
+  type    = bool
+  default = true
+  description = "If true adds additional Intel tags to resources"
+}
+
+variable "intel_tags" {
+  default     = {
+    intel-registry = "https://registry.terraform.io/namespaces/intel"
+    intel-module   = "terraform-intel-azure-databricks-workspace"
   }
+  type        = map(string)
+  description = "Intel Tags"
 }

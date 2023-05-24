@@ -10,10 +10,40 @@
 The module can deploy an Intel Optimized Azure Databricks Workspace.
 
 **Learn more about optimizations :**
+## Performance Data
 
-[Databricks Photon using Azure Edsv5](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+<center>
 
-[Accelerating Databricks Runtime for Machine Learning](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273)
+#### [Reduce Time to Decision With the Databricks Lakehouse Platform and Latest Intel 3rd Gen Xeon Scalable Processors](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-azure-databricks-workspace/blob/main/images/azure-dbx-1.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+#### [Up to 3.0x price/performance benefits and 6.7x the speed up on Azure Edsv5](https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-azure-databricks-workspace/blob/main/images/azure-dbx-2.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+#### [Accelerating Azure Databricks Runtime for Machine Learning](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273)
+
+<p align="center">
+  <a href="https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/accelerating-azure-databricks-runtime-for-machine-learning/ba-p/3524273">
+  <img src="https://github.com/intel/terraform-intel-azure-databricks-workspace/blob/main/images/dbx-runtime.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+</center>
+
 
 ## Usage
 
@@ -95,8 +125,10 @@ No modules.
 | <a name="input_dbx_sku"></a> [dbx\_sku](#input\_dbx\_sku) | The sku to use for the Databricks Workspace. Possible values are standard, premium, or trial. | `string` | `"premium"` | no |
 | <a name="input_dbx_vnet"></a> [dbx\_vnet](#input\_dbx\_vnet) | Name of the virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network | `string` | `""` | no |
 | <a name="input_dbx_workspace_name"></a> [dbx\_workspace\_name](#input\_dbx\_workspace\_name) | Name of the databricks workspace that will be created. | `string` | n/a | yes |
+| <a name="input_enable_intel_tags"></a> [enable\_intel\_tags](#input\_enable\_intel\_tags) | If true adds additional Intel tags to resources | `bool` | `true` | no |
+| <a name="input_intel_tags"></a> [intel\_tags](#input\_intel\_tags) | Intel Tags | `map(string)` | <pre>{<br>  "intel-module": "terraform-intel-azure-databricks-workspace",<br>  "intel-registry": "https://registry.terraform.io/namespaces/intel"<br>}</pre> | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Existing Resource Group where databricks reosurce will be created. | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Databricks Workspace | `map(string)` | <pre>{<br>  "module": "Intel-Cloud-Optimization-Module",<br>  "owner": "user@example.com"<br>}</pre> | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Databricks Workspace | `map(string)` | `{}` | no |
 
 ## Outputs
 
