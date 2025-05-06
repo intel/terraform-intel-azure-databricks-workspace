@@ -126,7 +126,7 @@ No modules.
 | <a name="input_dbx_vnet"></a> [dbx\_vnet](#input\_dbx\_vnet) | Name of the virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network | `string` | `""` | no |
 | <a name="input_dbx_workspace_name"></a> [dbx\_workspace\_name](#input\_dbx\_workspace\_name) | Name of the databricks workspace that will be created. | `string` | n/a | yes |
 | <a name="input_enable_intel_tags"></a> [enable\_intel\_tags](#input\_enable\_intel\_tags) | If true adds additional Intel tags to resources | `bool` | `true` | no |
-| <a name="input_intel_tags"></a> [intel\_tags](#input\_intel\_tags) | Intel Tags | `map(string)` | <pre>{<br>  "intel-module": "terraform-intel-azure-databricks-workspace",<br>  "intel-registry": "https://registry.terraform.io/namespaces/intel"<br>}</pre> | no |
+| <a name="input_intel_tags"></a> [intel\_tags](#input\_intel\_tags) | Intel Tags | `map(string)` | <pre>{<br/>  "intel-module": "terraform-intel-azure-databricks-workspace",<br/>  "intel-registry": "https://registry.terraform.io/namespaces/intel"<br/>}</pre> | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Existing Resource Group where databricks reosurce will be created. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Databricks Workspace | `map(string)` | `{}` | no |
 
@@ -142,10 +142,4 @@ No modules.
 | <a name="output_dbx_sku"></a> [dbx\_sku](#output\_dbx\_sku) | Sku tier of the databricks workspace |
 | <a name="output_dbx_workspace_name"></a> [dbx\_workspace\_name](#output\_dbx\_workspace\_name) | Name of the databricks workspace |
 | <a name="output_dbx_workspace_url"></a> [dbx\_workspace\_url](#output\_dbx\_workspace\_url) | URL of the databricks workspace |
-
-## Links
-
-<https://www.databricks.com/product/pricing>
-<https://learn.microsoft.com/en-us/azure/virtual-machines/edv5-edsv5-series>
-<https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html>
 <!-- END_TF_DOCS -->
