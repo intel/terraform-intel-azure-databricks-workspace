@@ -4,7 +4,7 @@
 
 # Intel® Cloud Optimization Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Azure Databricks
 The module can deploy an Intel Optimized Azure Databricks Workspace.
@@ -142,4 +142,10 @@ No modules.
 | <a name="output_dbx_sku"></a> [dbx\_sku](#output\_dbx\_sku) | Sku tier of the databricks workspace |
 | <a name="output_dbx_workspace_name"></a> [dbx\_workspace\_name](#output\_dbx\_workspace\_name) | Name of the databricks workspace |
 | <a name="output_dbx_workspace_url"></a> [dbx\_workspace\_url](#output\_dbx\_workspace\_url) | URL of the databricks workspace |
+
+## Links
+
+<https://www.databricks.com/product/pricing>
+<https://learn.microsoft.com/en-us/azure/virtual-machines/edv5-edsv5-series>
+<https://www.databricks.com/blog/2022/05/17/reduce-time-to-decision-with-the-databricks-lakehouse-platform-and-latest-intel-3rd-gen-xeon-scalable-processors.html>
 <!-- END_TF_DOCS -->

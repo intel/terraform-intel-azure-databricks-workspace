@@ -4,7 +4,7 @@
 
 # Intel® Cloud Optimization Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Azure Databricks
 The module can deploy an Intel Optimized Azure Databricks Workspace
