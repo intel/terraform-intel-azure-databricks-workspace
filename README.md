@@ -4,7 +4,7 @@
 
 # Intel® Cloud Optimization Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Azure Databricks
 The module can deploy an Intel Optimized Azure Databricks Workspace.
@@ -126,7 +126,7 @@ No modules.
 | <a name="input_dbx_vnet"></a> [dbx\_vnet](#input\_dbx\_vnet) | Name of the virtual network for your Databricks worskpace. Required only if you like to use your own virtual network else it will be on a databricks network | `string` | `""` | no |
 | <a name="input_dbx_workspace_name"></a> [dbx\_workspace\_name](#input\_dbx\_workspace\_name) | Name of the databricks workspace that will be created. | `string` | n/a | yes |
 | <a name="input_enable_intel_tags"></a> [enable\_intel\_tags](#input\_enable\_intel\_tags) | If true adds additional Intel tags to resources | `bool` | `true` | no |
-| <a name="input_intel_tags"></a> [intel\_tags](#input\_intel\_tags) | Intel Tags | `map(string)` | <pre>{<br>  "intel-module": "terraform-intel-azure-databricks-workspace",<br>  "intel-registry": "https://registry.terraform.io/namespaces/intel"<br>}</pre> | no |
+| <a name="input_intel_tags"></a> [intel\_tags](#input\_intel\_tags) | Intel Tags | `map(string)` | <pre>{<br/>  "intel-module": "terraform-intel-azure-databricks-workspace",<br/>  "intel-registry": "https://registry.terraform.io/namespaces/intel"<br/>}</pre> | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Existing Resource Group where databricks reosurce will be created. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to apply to the Databricks Workspace | `map(string)` | `{}` | no |
 
